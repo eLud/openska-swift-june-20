@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 //: Variables
 
@@ -131,3 +131,166 @@ vide1.sorted(by: test)
 func test(x: String, y: String) -> Bool {
     return true
 }
+
+//Boucles
+
+while false {
+
+}
+
+repeat {
+
+} while false
+
+for i in 0...10 where i.isMultiple(of: 2) {
+
+}
+
+for i in stride(from: 0, to: 10, by: 0.5) {
+    print(i)
+}
+
+for truc in vide1 {
+    print(truc)
+}
+
+vide1
+
+for (index, element) in vide1.enumerated() {
+    print(element)
+    print(index)
+}
+
+for truc in dicoGrouped {
+    truc.value
+}
+
+dicoGrouped.forEach { print($0) }
+cities.forEach { (str) in
+
+}
+
+//:Conditions
+
+switch "kjfgskdjgf" {
+case "fvf", "utu", "ljg;,nb,":
+    print("youhou")
+    fallthrough
+case "ruyu":
+    break
+default:
+    ()
+}
+
+func test(truc: Bool) {
+
+    //Truc DOIT etre true
+    guard truc else { return }
+
+    if truc {
+
+    } else {
+
+    }
+}
+
+//: Optionals
+
+enum Optionel<Wrapped> {
+    case none
+    case some(Wrapped)
+
+//    func unwrap() -> Wrapped {
+//
+//    }
+}
+
+//Une string optionnelle
+var optString: String? = "azertyuiop"
+
+let lowString = optString?.lowercased()
+
+if optString != nil {
+    print(optString!)
+    print(optString!)
+}
+
+if let optString = optString {
+    print(optString)
+}
+
+guard let optString = optString else { fatalError() }
+print(optString)
+
+let serverURL = URL(string: "https://server.com/v1")!
+
+var ageStr = "20"
+let age = Int(ageStr) ?? 0
+
+let textField = UITextField()
+
+//guard let str = textField.text, !str.isEmpty, let age = Int(str), age > 20 else { fatalError() }
+
+//:Fonctions
+
+func unNom() {
+
+}
+unNom()
+
+struct Aliment {}
+
+let pizza = Aliment()
+
+func eat(_ aliment: Aliment, with friend: String? = nil, at: Date = Date()) {
+    print(aliment)
+    print(friend)
+}
+
+func eat(_ aliment: String, with friend: String? = nil, at: Date = Date()) {
+    print(aliment)
+    print(friend)
+}
+
+eat(pizza)
+eat(pizza, with: "Robert")
+eat(pizza, with: "Ami")
+eat(pizza, with: nil)
+eat(pizza, with: "toto")
+
+func simple() -> (message: String, code: Int, isOk: Bool) {
+    return ("", 0, false)
+}
+
+let simpleReturn = simple()
+simpleReturn.isOk
+
+//func request(_ url: URL) -> (data: Data, code: Int, error: NSError?){
+//
+//}
+
+var ratio: (x: Int, y: Int) = (1, 5)
+func dowith(ratio: (Int, Int)) {
+
+}
+
+func varFunc<T>(numbers: T...) {
+    print(numbers)
+}
+
+varFunc(numbers: 0,8,7,56)
+
+struct Vector2<T: SignedNumeric&Equatable> {
+    var x: T
+    var y: T
+
+    mutating func add(otherVector: Vector2) -> Vector2 {
+        x += otherVector.x
+        y += otherVector.y
+
+        return self
+    }
+}
+
+var myV = Vector2(x: 5, y: 0)
+//myV.add(otherVector: Vector2(x: 0.5, y: 2.7))
