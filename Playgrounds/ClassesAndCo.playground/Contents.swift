@@ -228,3 +228,109 @@ do {
 if let readText = try? openFile(at: URL(string: "azertyu")!) {
     print(readText)
 }
+
+@propertyWrapper
+struct Trimmed {
+
+    private(set) var value: String = ""
+
+    init(wrappedValue: String) {
+        self.wrappedValue = wrappedValue
+    }
+
+    var wrappedValue: String {
+        get { value }
+        set {
+            value = newValue.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+    }
+}
+
+struct Message {
+
+    @Trimmed var message: String
+    var recipent: String
+
+    @Clamped(lowerBound: 0, upperBound: 14)
+    var number: Double
+}
+
+var message = Message(message: "Hello        ", recipent: "Julien")
+//message.recipent = "toto"
+print(message)
+message.number = 100
+
+message.number
+
+@propertyWrapper
+struct Logged<Value> {
+
+    private var value: Value
+
+    init(wrappedValue: Value) {
+        self.value = wrappedValue
+    }
+
+    var wrappedValue: Value {
+        get { value }
+        set {
+            value = newValue
+            print("New value is \(newValue)")
+        }
+    }
+}
+
+@propertyWrapper
+struct Clamped {
+
+    private var value: Double = 0
+    private var lower: Double
+    private var upper: Double
+
+    init(lowerBound: Double, upperBound: Double) {
+        self.lower = lowerBound
+        self.upper = upperBound
+    }
+
+    var wrappedValue: Double {
+        get { value }
+        set {
+            if newValue < lower {
+                value = lower
+            } else if newValue > upper {
+                value = upper
+            } else {
+                value = newValue
+            }
+        }
+    }
+}
+
+
+@propertyWrapper
+struct UserDefault<T> {
+
+    let key: String
+    let defaultValue: T
+    let defaults: UserDefaults = .standard
+
+    init(_ key: String, defaultValue: T) {
+        self.key = key
+        self.defaultValue = defaultValue
+    }
+
+    var wrappedValue: T {
+        get {
+            return defaults.object(forKey: key) as? T ?? defaultValue
+        }
+        set {
+            defaults.set(newValue, forKey: key)
+        }
+    }
+}
+
+struct UserDefaultsConfig {
+
+    @UserDefault("has_seen_app_introduction", defaultValue: false)
+    static var hasSeenAppIntroduction: Bool
+}
