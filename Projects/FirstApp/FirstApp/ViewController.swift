@@ -11,6 +11,10 @@ class ViewController: UIViewController {
 
     var human: Human?
 
+    var completion: ()->() = {
+
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -26,6 +30,25 @@ class ViewController: UIViewController {
 //        me = nil
 //        son = nil
 //        otherMe = nil
+
+        completion = { [weak self] in
+            self?.doSomething(with: "tata")
+            self?.download()
+        }
+
+    }
+
+    func download() {
+
+        let session = URLSession.shared
+        let task = session.dataTask(with: URL(string: "toto")!) { [weak self] (data, response, error) in
+            self?.doSomething(with: "tata")
+        }
+
+        task.resume()
+    }
+
+    func doSomething(with result: String) {
 
     }
 
