@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TotoKit
 
 class ViewController: UIViewController {
 
@@ -24,6 +25,10 @@ class ViewController: UIViewController {
         tableView.delegate = self
 
         prepareData()
+
+        let toto = Toto(apiKey:"sdfghjk")
+        toto.apiKeyIsValid()
+        Toto.totoify()
     }
 
     ///Prepares the data

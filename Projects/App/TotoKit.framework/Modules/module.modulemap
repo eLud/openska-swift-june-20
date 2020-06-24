@@ -1,0 +1,11 @@
+framework module TotoKit {
+  umbrella header "TotoKit.h"
+
+  export *
+  module * { export * }
+}
+
+module TotoKit.Swift {
+    header "TotoKit-Swift.h"
+    requires objc
+}
