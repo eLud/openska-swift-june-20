@@ -50,12 +50,12 @@ class ViewController: UIViewController {
         odrRequest = NSBundleResourceRequest(tags: ["additional"])
 
         odrRequest?.loadingPriority = NSBundleResourceRequestLoadingPriorityUrgent
-
         progressView.observedProgress = odrRequest?.progress
 
         odrRequest?.beginAccessingResources(completionHandler: { (error) in
             guard error == nil else {
                 print(error)
+
                 return
             }
 
@@ -76,6 +76,8 @@ class ViewController: UIViewController {
                 self.odrRequest?.endAccessingResources()
                 self.odrRequest = nil
             }
+
+            bundle.setPreservationPriority(0.5, forTags: ["additional"])
         })
     }
 

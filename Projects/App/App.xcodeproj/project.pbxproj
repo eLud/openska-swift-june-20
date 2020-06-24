@@ -17,7 +17,7 @@
 		334E4D8D24A24DFD0006BE1D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334E4D8C24A24DFD0006BE1D /* WebKit.framework */; };
 		33DF6F4F24A37FB000F5E0F5 /* Websites.json in Resources */ = {isa = PBXBuildFile; fileRef = 33DF6F4E24A37FB000F5E0F5 /* Websites.json */; };
 		33DF6F5124A383DE00F5E0F5 /* AdditionalWebsites.json in Resources */ = {isa = PBXBuildFile; fileRef = 33DF6F5024A383DE00F5E0F5 /* AdditionalWebsites.json */; settings = {ASSET_TAGS = (additional, ); }; };
-		33DF6F5324A3844E00F5E0F5 /* onboarding.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 33DF6F5224A3844E00F5E0F5 /* onboarding.mp4 */; settings = {ASSET_TAGS = (additional, ); }; };
+		33DF6F5324A3844E00F5E0F5 /* onboarding.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 33DF6F5224A3844E00F5E0F5 /* onboarding.mp4 */; settings = {ASSET_TAGS = (additional, onboarding, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +127,7 @@
 			attributes = {
 				KnownAssetTags = (
 					additional,
+					onboarding,
 				);
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
