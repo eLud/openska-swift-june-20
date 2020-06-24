@@ -15,6 +15,7 @@
 		334E4D8224A248130006BE1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 334E4D8024A248130006BE1D /* LaunchScreen.storyboard */; };
 		334E4D8A24A24BC40006BE1D /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334E4D8924A24BC40006BE1D /* BrowserViewController.swift */; };
 		334E4D8D24A24DFD0006BE1D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334E4D8C24A24DFD0006BE1D /* WebKit.framework */; };
+		33DF6F4F24A37FB000F5E0F5 /* Websites.json in Resources */ = {isa = PBXBuildFile; fileRef = 33DF6F4E24A37FB000F5E0F5 /* Websites.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		334E4D8324A248130006BE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		334E4D8924A24BC40006BE1D /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		334E4D8C24A24DFD0006BE1D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		33DF6F4E24A37FB000F5E0F5 /* Websites.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Websites.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				334E4D7924A248110006BE1D /* ViewController.swift */,
 				334E4D8924A24BC40006BE1D /* BrowserViewController.swift */,
 				334E4D7B24A248110006BE1D /* Main.storyboard */,
+				33DF6F4E24A37FB000F5E0F5 /* Websites.json */,
 				334E4D7E24A248130006BE1D /* Assets.xcassets */,
 				334E4D8024A248130006BE1D /* LaunchScreen.storyboard */,
 				334E4D8324A248130006BE1D /* Info.plist */,
@@ -142,6 +145,7 @@
 				334E4D8224A248130006BE1D /* LaunchScreen.storyboard in Resources */,
 				334E4D7F24A248130006BE1D /* Assets.xcassets in Resources */,
 				334E4D7D24A248110006BE1D /* Main.storyboard in Resources */,
+				33DF6F4F24A37FB000F5E0F5 /* Websites.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

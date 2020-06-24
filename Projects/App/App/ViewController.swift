@@ -24,12 +24,19 @@ class ViewController: UIViewController {
     }
 
     ///Prepares the data
-    func prepareData() {
-        let appleDev = Website(name: "Apple Developer Portal", url: URL(string: "https://developer.apple.com")!)
-        let swift = Website(name: "Swift Official Website", url: URL(string: "https://www.swift.org")!)
-        let wwdcVideos = Website(name: "WWDC20 Videos", url: URL(string: "https://developer.apple.com/wwdc20/sessions/")!)
+    private func prepareData() {
 
-        websites = [appleDev, swift, wwdcVideos]
+        // Get data from disk (from project)
+        let bundle = Bundle.main
+        guard let url = bundle.url(forResource: "Websites", withExtension: "json") else { return }
+        guard let data = try? Data(contentsOf: url) else { return }
+
+        // Parse
+        guard let websites = makeWebsites(from: data) else { return }
+
+        //Assign
+        self.websites = websites
+
         tableView.reloadData()
     }
 
@@ -94,7 +101,34 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
-struct Website {
+///Manage persistence
+extension ViewController {
+
+    func makeJson(with websites: [Website]) -> Data? {
+
+        let encoder = JSONEncoder()
+        let data = try? encoder.encode(websites)
+
+        return data
+    }
+
+
+
+    func makeWebsites(from data: Data) -> [Website]? {
+
+        let decoder = JSONDecoder()
+        let websites = try? decoder.decode([Website].self, from: data)
+        return websites
+    }
+}
+
+struct Website: Codable {
+
     let name: String
     let url: URL
+
+//    enum CodingKeys: String, CodingKey {
+//        case name = "title"
+//        case url = "website_url"
+//    }
 }
