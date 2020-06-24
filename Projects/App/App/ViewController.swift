@@ -11,17 +11,31 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    var websites: [Website] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
         tableView.dataSource = self
+
+        prepareData()
+    }
+
+    ///Prepares the data
+    func prepareData() {
+        let appleDev = Website(name: "Apple Developer Portal", url: URL(string: "https://developer.apple.com")!)
+        let swift = Website(name: "Swift Official Website", url: URL(string: "https://swift.org")!)
+        let wwdcVideos = Website(name: "WWDC20 Videos", url: URL(string: "https://developer.apple.com/wwdc20/sessions/")!)
+
+        websites = [appleDev, swift, wwdcVideos]
+        tableView.reloadData()
     }
 }
 extension ViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,9 +49,7 @@ extension ViewController: UITableViewDataSource {
 
         switch section {
         case 0:
-            return 5
-        case 1:
-            return 2
+            return websites.count
         default:
             return 0
         }
@@ -48,10 +60,15 @@ extension ViewController: UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "websiteCell", for: indexPath)
 
-        cell.textLabel?.text = "Apple Developer Portal"
-        cell.detailTextLabel?.text = "https://developer.apple.com"
+        let website = websites[indexPath.row]
+        cell.textLabel?.text = website.name
+        cell.detailTextLabel?.text = website.url.absoluteString
 
         return cell
     }
 }
 
+struct Website {
+    let name: String
+    let url: URL
+}
