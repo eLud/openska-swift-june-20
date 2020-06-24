@@ -17,61 +17,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G7b-7N-fCZ">
-                                <rect key="frame" x="141.5" y="348" width="131" height="200"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="P2t-ku-Fg7">
-                                        <rect key="frame" x="0.0" y="0.0" width="131" height="32"/>
-                                        <segments>
-                                            <segment title="First"/>
-                                            <segment title="Second"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWC-bL-tJn">
-                                        <rect key="frame" x="45" y="64" width="41.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="safari" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cC9-o5-TaP">
-                                        <rect key="frame" x="55.5" y="117.5" width="20" height="19"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CM2-hs-hTt">
-                                        <rect key="frame" x="40" y="170" width="51" height="30"/>
-                                        <state key="normal" title="Browse"/>
-                                        <connections>
-                                            <segue destination="5hb-vT-FTC" kind="show" id="OXY-eI-0eE"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="1Pg-rV-5Ab"/>
-                                </constraints>
-                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="qAE-UZ-i2q">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="websiteCell" textLabel="HBR-X5-JYl" detailTextLabel="pX0-IB-Sdv" style="IBUITableViewCellStyleSubtitle" id="ekS-2o-CBY">
+                                        <rect key="frame" x="20" y="55.5" width="374" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ekS-2o-CBY" id="AxK-o9-jjo">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HBR-X5-JYl">
+                                                    <rect key="frame" x="20" y="10" width="33" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pX0-IB-Sdv">
+                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="G7b-7N-fCZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KQ6-PR-IeI"/>
-                            <constraint firstItem="G7b-7N-fCZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r99-Vx-FA3"/>
+                            <constraint firstAttribute="bottom" secondItem="qAE-UZ-i2q" secondAttribute="bottom" id="Jom-Sg-SF1"/>
+                            <constraint firstItem="qAE-UZ-i2q" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UD7-Ja-lME"/>
+                            <constraint firstItem="qAE-UZ-i2q" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uuM-cl-jhL"/>
+                            <constraint firstItem="qAE-UZ-i2q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wWz-P5-rde"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="qAE-UZ-i2q" id="g8t-KH-3tR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+            <point key="canvasLocation" x="507" y="-27"/>
         </scene>
         <!--Browser View Controller-->
         <scene sceneID="YaQ-AL-ELI">
             <objects>
                 <viewController id="5hb-vT-FTC" customClass="BrowserViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UyA-od-5Se">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJD-oc-Sbn">
-                                <rect key="frame" x="0.0" y="58" width="414" height="784"/>
+                                <rect key="frame" x="0.0" y="102" width="414" height="794"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -79,13 +81,13 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 €" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="BH6-pY-MA7">
-                                <rect key="frame" x="369" y="24.5" width="25" height="21"/>
+                                <rect key="frame" x="369" y="68.5" width="25" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbg-I2-cMT">
-                                <rect key="frame" x="20" y="20" width="30" height="30"/>
+                                <rect key="frame" x="20" y="64" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="2Nu-eA-wgA"/>
                                     <constraint firstAttribute="height" constant="30" id="mbl-OA-xy2"/>
@@ -100,7 +102,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="LX1-oL-FiX">
-                                <rect key="frame" x="188.5" y="431.5" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="480.5" width="37" height="37"/>
                                 <color key="color" systemColor="systemPinkColor"/>
                             </activityIndicatorView>
                         </subviews>
@@ -133,11 +135,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="safari" catalog="system" width="128" height="121"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
