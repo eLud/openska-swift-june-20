@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
 
         tableView.dataSource = self
+        tableView.delegate = self
 
         prepareData()
     }
@@ -25,13 +26,27 @@ class ViewController: UIViewController {
     ///Prepares the data
     func prepareData() {
         let appleDev = Website(name: "Apple Developer Portal", url: URL(string: "https://developer.apple.com")!)
-        let swift = Website(name: "Swift Official Website", url: URL(string: "https://swift.org")!)
+        let swift = Website(name: "Swift Official Website", url: URL(string: "https://www.swift.org")!)
         let wwdcVideos = Website(name: "WWDC20 Videos", url: URL(string: "https://developer.apple.com/wwdc20/sessions/")!)
 
         websites = [appleDev, swift, wwdcVideos]
         tableView.reloadData()
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "goBrowser" {
+
+            guard let destination = segue.destination as? BrowserViewController else { return }
+
+            guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else { return }
+
+            let website = websites[indexPath.row]
+            destination.destinationURL = website.url
+        }
+    }
 }
+
 extension ViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -65,6 +80,17 @@ extension ViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = website.url.absoluteString
 
         return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Available websites"
+    }
+
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "Nothing else"
     }
 }
 

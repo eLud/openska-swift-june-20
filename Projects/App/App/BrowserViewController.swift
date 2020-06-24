@@ -14,7 +14,7 @@ class BrowserViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
 
-    var destinationURL: URL = URL(string: "https://developer.apple.com")!
+    var destinationURL: URL?
 
     //init
     //loadView
@@ -26,6 +26,9 @@ class BrowserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        guard let destinationURL = destinationURL else {
+                fatalError("No URL provided") }
+
         // Do any additional setup after loading the view.
         print("Browser")
 
@@ -34,15 +37,15 @@ class BrowserViewController: UIViewController {
 
         webView.navigationDelegate = self
 
-        initialLoading()
+        initialLoading(destinationURL)
     }
 
     @IBAction func dismiss(_ sender: UIButton) {
         loadingActivityIndicator.stopAnimating()
     }
 
-    private func initialLoading() {
-        let request = URLRequest(url: destinationURL)
+    private func initialLoading(_ url: URL) {
+        let request = URLRequest(url: url)
         webView.load(request)
     }
 }
