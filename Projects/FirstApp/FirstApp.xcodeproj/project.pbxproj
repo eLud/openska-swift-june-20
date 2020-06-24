@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		334E4D6824A242010006BE1D /* RPReplay_Final1589358643.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 334E4D6724A242010006BE1D /* RPReplay_Final1589358643.mp4 */; settings = {ASSET_TAGS = (onboarding, ); }; };
 		33D7855D24A2141700366EA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D7855C24A2141700366EA8 /* AppDelegate.swift */; };
 		33D7855F24A2141700366EA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D7855E24A2141700366EA8 /* SceneDelegate.swift */; };
 		33D7856124A2141700366EA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D7856024A2141700366EA8 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		334E4D6724A242010006BE1D /* RPReplay_Final1589358643.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = RPReplay_Final1589358643.mp4; sourceTree = "<group>"; };
 		33D7855924A2141700366EA8 /* FirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D7855C24A2141700366EA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33D7855E24A2141700366EA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				33D7856524A2141900366EA8 /* Assets.xcassets */,
 				33D7856724A2141900366EA8 /* LaunchScreen.storyboard */,
 				33D7856A24A2141900366EA8 /* Info.plist */,
+				334E4D6724A242010006BE1D /* RPReplay_Final1589358643.mp4 */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";
@@ -93,6 +96,9 @@
 		33D7855124A2141700366EA8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					onboarding,
+				);
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
@@ -127,6 +133,7 @@
 				33D7856924A2141900366EA8 /* LaunchScreen.storyboard in Resources */,
 				33D7856624A2141900366EA8 /* Assets.xcassets in Resources */,
 				33D7856424A2141700366EA8 /* Main.storyboard in Resources */,
+				334E4D6824A242010006BE1D /* RPReplay_Final1589358643.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +296,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7SGM6JEMA;
 				INFOPLIST_FILE = FirstApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7SGM6JEMA;
 				INFOPLIST_FILE = FirstApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
