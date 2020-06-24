@@ -40,12 +40,14 @@ class ViewController: UIViewController {
         //Assign
         self.websites = websites
 
-        prepareORD()
+        prepareORD { (error) in
+
+        }
 
         tableView.reloadData()
     }
 
-    private func prepareORD() {
+    private func prepareORD(completion: @escaping (Error?)-> ()) {
 
         odrRequest = NSBundleResourceRequest(tags: ["additional"])
 
@@ -53,6 +55,7 @@ class ViewController: UIViewController {
         progressView.observedProgress = odrRequest?.progress
 
         odrRequest?.beginAccessingResources(completionHandler: { (error) in
+            completion(error)
             guard error == nil else {
                 print(error)
 
@@ -93,6 +96,13 @@ class ViewController: UIViewController {
             destination.destinationURL = website.url
         }
     }
+
+    func loop(_ nbOfTime: Int, code: ()->()) {
+        for _ in 0...nbOfTime {
+            code()
+        }
+    }
+
 }
 
 extension ViewController: UITableViewDataSource {
