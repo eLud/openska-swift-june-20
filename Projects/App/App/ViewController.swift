@@ -10,8 +10,11 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var progressView: UIProgressView!
+    
     var websites: [Website] = []
+
+    var odrRequest: NSBundleResourceRequest?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +40,43 @@ class ViewController: UIViewController {
         //Assign
         self.websites = websites
 
+        prepareORD()
+
         tableView.reloadData()
+    }
+
+    private func prepareORD() {
+
+        odrRequest = NSBundleResourceRequest(tags: ["additional"])
+
+        odrRequest?.loadingPriority = NSBundleResourceRequestLoadingPriorityUrgent
+
+        progressView.observedProgress = odrRequest?.progress
+
+        odrRequest?.beginAccessingResources(completionHandler: { (error) in
+            guard error == nil else {
+                print(error)
+                return
+            }
+
+            // Get data from disk (from project)
+            let bundle = Bundle.main
+            guard let url = bundle.url(forResource: "AdditionalWebsites", withExtension: "json") else { return }
+            guard let data = try? Data(contentsOf: url) else { return }
+
+            // Parse
+            guard let websites = self.makeWebsites(from: data) else { return }
+
+            //Assign
+            self.websites.append(contentsOf: websites)
+
+            DispatchQueue.main.async {
+                self.progressView.isHidden = true
+                self.tableView.reloadData()
+                self.odrRequest?.endAccessingResources()
+                self.odrRequest = nil
+            }
+        })
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

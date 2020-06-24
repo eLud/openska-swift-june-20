@@ -16,6 +16,8 @@
 		334E4D8A24A24BC40006BE1D /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334E4D8924A24BC40006BE1D /* BrowserViewController.swift */; };
 		334E4D8D24A24DFD0006BE1D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334E4D8C24A24DFD0006BE1D /* WebKit.framework */; };
 		33DF6F4F24A37FB000F5E0F5 /* Websites.json in Resources */ = {isa = PBXBuildFile; fileRef = 33DF6F4E24A37FB000F5E0F5 /* Websites.json */; };
+		33DF6F5124A383DE00F5E0F5 /* AdditionalWebsites.json in Resources */ = {isa = PBXBuildFile; fileRef = 33DF6F5024A383DE00F5E0F5 /* AdditionalWebsites.json */; settings = {ASSET_TAGS = (additional, ); }; };
+		33DF6F5324A3844E00F5E0F5 /* onboarding.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 33DF6F5224A3844E00F5E0F5 /* onboarding.mp4 */; settings = {ASSET_TAGS = (additional, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		334E4D8924A24BC40006BE1D /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		334E4D8C24A24DFD0006BE1D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		33DF6F4E24A37FB000F5E0F5 /* Websites.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Websites.json; sourceTree = "<group>"; };
+		33DF6F5024A383DE00F5E0F5 /* AdditionalWebsites.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AdditionalWebsites.json; sourceTree = "<group>"; };
+		33DF6F5224A3844E00F5E0F5 /* onboarding.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = onboarding.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 				334E4D7E24A248130006BE1D /* Assets.xcassets */,
 				334E4D8024A248130006BE1D /* LaunchScreen.storyboard */,
 				334E4D8324A248130006BE1D /* Info.plist */,
+				33DF6F5424A3845B00F5E0F5 /* Resources */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -83,6 +88,15 @@
 				334E4D8C24A24DFD0006BE1D /* WebKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33DF6F5424A3845B00F5E0F5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				33DF6F5024A383DE00F5E0F5 /* AdditionalWebsites.json */,
+				33DF6F5224A3844E00F5E0F5 /* onboarding.mp4 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,6 +125,9 @@
 		334E4D6A24A248110006BE1D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					additional,
+				);
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
@@ -142,9 +159,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33DF6F5124A383DE00F5E0F5 /* AdditionalWebsites.json in Resources */,
 				334E4D8224A248130006BE1D /* LaunchScreen.storyboard in Resources */,
 				334E4D7F24A248130006BE1D /* Assets.xcassets in Resources */,
 				334E4D7D24A248110006BE1D /* Main.storyboard in Resources */,
+				33DF6F5324A3844E00F5E0F5 /* onboarding.mp4 in Resources */,
 				33DF6F4F24A37FB000F5E0F5 /* Websites.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
